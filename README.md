@@ -69,3 +69,37 @@ Ensure you have Java 11 or higher installed on your environment to run the backe
 import h2o
 # Initialize local cluster with 4 threads
 h2o.init(max_mem_size='12G', nthreads=4)
+
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+Before running the code, ensure you have the following installed on your machine:
+* **Python 3.8+**
+* **Java Runtime Environment (JRE) or JDK (Version 11 or higher)** — *Mandatory because the Python `h2o` library runs on a local in-memory Java virtual machine cluster backend.*
+* **pip** (Python package installer)
+
+### 1. Clone Repository
+Open your terminal and run the following commands to download the project locally:
+```bash
+git clone [https://github.com/your-username/stroke-prediction-model.git](https://github.com/your-username/stroke-prediction-model.git)
+cd stroke-prediction-model
+
+# Create the environment
+python -m venv venv
+
+# Windows Activation
+venv\Scripts\activate
+
+# Mac/Linux Activation
+source venv/bin/activate
+
+pip install pandas numpy matplotlib seaborn statsmodels h2o scikit-learn streamlit
+
+##Train the Model
+
+python train_model.py
+
+##Launch the interactive web platform to run diagnostic assessments interactively.
+
+streamlit run app.py
